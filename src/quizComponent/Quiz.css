@@ -1,0 +1,43 @@
+.quiz-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid;
+    height: 100vh;
+}
+
+.num-of-questions, .directions{
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+
+.inner-quiz-container{
+    border: 1px solid;
+    padding: 2rem;
+    margin-top: 30vh;
+    width: 60vw;
+    height: auto;
+}
+.quiz-list-container{
+    display: flex;
+    flex-direction: column;
+    padding-left: 0px;
+}
+.quiz-answers{
+    list-style-type: none;
+    width: auto;
+    padding: 1rem;
+    padding-left: 0;
+    border-radius: 8px;
+}
+
+.quiz-answers:hover  {
+    background-color:bisque;
+    
+}
+
+.end-game {
+    align-items: center;
+    margin-top: 30vh;
+}

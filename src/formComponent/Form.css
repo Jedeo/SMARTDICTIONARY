@@ -1,0 +1,18 @@
+.form-container{
+    display: flex;
+    flex-direction: column;
+    margin: 20vh;
+    
+}
+
+.form-input, .submit-button{
+    text-decoration: none;
+    width: 20vw;
+    height: 2rem;
+    border-radius: 12px;
+    margin:auto;
+}
+
+.form-input{
+    margin-bottom: 1rem;
+}
