@@ -2,8 +2,9 @@ import React, { useContext, useState, useEffect } from "react";
 import { getWordDefinition, getExamples } from "../apiCalls/getWords";
 import Word from "../wordComponent/Word";
 import { Redirect } from "react-router-dom";
+import PropTypes from 'prop-types';
 
-const SearchWord = ({ setErrMessage,word }) => {
+export default function SearchWord ({ setErrMessage,word }) {
   const [details, setDetails] = useState({
     _id: null,
     examples: [],
@@ -21,7 +22,6 @@ const SearchWord = ({ setErrMessage,word }) => {
 
       const wordKeys = Object.keys(words);
       const examplesKeys = Object.keys(examples);
-      console.log(wordKeys, examplesKeys);
       if (wordKeys.length > 0 && examplesKeys.length > 0) {
         return words.map((word) => {
           setDetails({
@@ -36,7 +36,6 @@ const SearchWord = ({ setErrMessage,word }) => {
         });
         
       } else {
-        console.log("else");
         setGotError(true)
         setErrMessage(words)
       }
@@ -51,4 +50,10 @@ const SearchWord = ({ setErrMessage,word }) => {
   </section>;
 };
 
-export default SearchWord;
+SearchWord.propTypes = {
+    setErrMessage: PropTypes.func.isRequired,
+    word: PropTypes.string.isRequired
+
+  };
+
+

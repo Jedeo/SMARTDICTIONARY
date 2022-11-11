@@ -1,12 +1,14 @@
 import React from "react";
+import "./PageNotFound.css"
+import PropTypes from 'prop-types';
 
 
 export default function PageNotFound ({errMessage}) {
-    console.log(typeof errMessage);
-  const key = Object.keys(errMessage)
-    console.log(errMessage.message);
     return (
-        <h1>{errMessage.message}</h1>
+        <h1 className="error">{errMessage.message || "page not found please try again later"}</h1>
     )
 }
 
+PageNotFound.propTypes = {
+    errMessage: PropTypes.object
+  };

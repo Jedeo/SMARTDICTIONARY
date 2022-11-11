@@ -2,7 +2,7 @@ import React, { useState} from "react";
 import "./Form.css";
 import { Link } from "react-router-dom";
 
-const Form = ({id}) => {
+const Form = () => {
   const [word, setWord] = useState("");
   const handleChange = (event) => {
     setWord(event.currentTarget.value)

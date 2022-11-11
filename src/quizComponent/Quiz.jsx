@@ -1,5 +1,6 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext} from "react";
 import { QuizContext } from "../context/quizContext/QuizContext";
+import PropTypes from 'prop-types';
 
 import "./Quiz.css";
 
@@ -16,7 +17,6 @@ export default function Quiz({setNewRound,  newRound}) {
   const  shortest = values.sort((a,b) => a.length - b.length )
 
   const checkAnswer = (answer) => {
-    console.log(quizDefs[quizWords[count]].includes(answer));
     if (quizDefs[quizWords[count]].includes(answer)) {
       setAnswerMessage("Great Job") 
     } else{
@@ -114,3 +114,8 @@ export default function Quiz({setNewRound,  newRound}) {
     </section>
   );
 }
+
+Quiz.propTypes = {
+    setNewRound: PropTypes.func.isRequired,
+    newRound: PropTypes.object.isRequired
+  };

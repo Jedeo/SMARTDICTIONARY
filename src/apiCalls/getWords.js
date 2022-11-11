@@ -1,7 +1,6 @@
 const checkError = async (resp) => {
   try {
     if (!resp.ok) {
-      console.log("here");
       const message = `An error has occurred: ${resp.status}`
       throw new Error(message);
     }
