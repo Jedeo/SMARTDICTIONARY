@@ -1,7 +1,8 @@
 import React from "react";
 import "./Word.css";
+import PropTypes from "prop-types"
 
-export default function ({ todayWord }) {
+export default function Word ({ todayWord }) {
   const { word, definitions, examples, note } = todayWord;
   const wordDefinitions = definitions.map((definition) => {
     return <li key={definition.text}>{definition.text}</li>;
@@ -33,4 +34,8 @@ export default function ({ todayWord }) {
       </div>
     </section>
   );
+}
+
+Word.prototype = {
+  todayWord: PropTypes.string.isRequired
 }
