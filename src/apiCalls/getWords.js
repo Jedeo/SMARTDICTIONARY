@@ -20,7 +20,7 @@ export const wordOfTheDay = async () => {
 
 export const getExamples = async (word) => {
   const resp = await fetch(
-    `https://api.wordnik.com/v4/word.json/${word}/examples?includeDuplicates=false&useCanonical=false&limit=5&api_key=${process.env.REACT_APP_API_KEY}`
+    `https://api.wordnik.com/v4/word.json/${word}/examples?includeDuplicates=false&useCanonical=false&limit=4&api_key=${process.env.REACT_APP_API_KEY}`
   );
   return checkError(resp)
 };
@@ -34,7 +34,7 @@ export const getWordDefinition = async (word) => {
 
 export const getQuizWords = async () => {
   const resp = await fetch(
-    `https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=6&maxLength=-1&limit=6&api_key=${process.env.REACT_APP_API_KEY}`
+    `https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=8&maxLength=8&limit=2&api_key=${process.env.REACT_APP_API_KEY}`
   );
 
   return checkError(resp)
