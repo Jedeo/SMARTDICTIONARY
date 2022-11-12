@@ -10,6 +10,6 @@ const Learn = ({setNewRound,  newRound}) => {
 export default Learn;
 
 Learn.propTypes = {
-    setNewRound: PropTypes.func.isRequired,  
-    newRound: PropTypes.object.isRequired
+    setNewRound: PropTypes.func,  
+    newRound: PropTypes.object
 }

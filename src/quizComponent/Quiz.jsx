@@ -35,13 +35,13 @@ export default function Quiz({setNewRound,  newRound}) {
     checkEndOfGame()
     if(newGame === "New Quiz"){
         setNewRound(true)
-        setCount(0)
+        setCount(1)
         setNewGame("Next Word")
     }
   };
   console.log(newRound, {count}, {newGame});
   const getRound = () => {
-    return shortest[0].length;
+    return shortest[0]?.length;
   };
 
   const getCurrentRound = () => {
@@ -56,7 +56,7 @@ export default function Quiz({setNewRound,  newRound}) {
 
   const getRandomAnswer = (number) => {
     const keysDef = quizDefs[keys[number]];
-    return keysDef[count];
+    return keysDef?.[count];
   };
 
   return (
