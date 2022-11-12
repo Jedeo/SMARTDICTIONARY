@@ -1,20 +1,21 @@
 import React, { useState, useContext} from "react";
+import { Redirect } from "react-router-dom";
 import { QuizContext } from "../context/quizContext/QuizContext";
 import PropTypes from 'prop-types';
 
 import "./Quiz.css";
 
-export default function Quiz({setNewRound,  newRound}) {
+export default function Quiz({setNewRound,  newRound,  gotError}) {
   const [quiz] = useContext(QuizContext);
   const { quizWords, quizDefs } = quiz;
 
   const [newGame, setNewGame] = useState("Next Word");
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
   const [answerMessage, setAnswerMessage] = useState("")
 
   const keys = Object.keys(quizDefs);
   const values = Object.values(quizDefs);
-  const  shortest = values.sort((a,b) => a.length - b.length )
+  const  shortest = values?.sort((a,b) => a.length - b.length )
 
   const checkAnswer = (answer) => {
     if (quizDefs[quizWords[count]].includes(answer)) {
@@ -39,9 +40,10 @@ export default function Quiz({setNewRound,  newRound}) {
         setNewGame("Next Word")
     }
   };
-  console.log(newRound, {count}, {newGame});
+ 
   const getRound = () => {
-    return shortest[0].length;
+    setNewRound(false)
+    return shortest[0]?.length;
   };
 
   const getCurrentRound = () => {
@@ -56,12 +58,14 @@ export default function Quiz({setNewRound,  newRound}) {
 
   const getRandomAnswer = (number) => {
     const keysDef = quizDefs[keys[number]];
-    return keysDef[count];
+    return keysDef?.[count];
   };
 
   return (
     <section className="quiz-container">
-      {newGame !== "New Quiz" ? (
+        
+
+      {newGame !== "New Quiz" && count !== 0 ? (
         <div className="inner-quiz-container">
           <h4>THE OBJECTIVE: TO ACE THIS DEFINITION QUIZ!</h4>
           <h5 className="num-of-questions">
@@ -109,13 +113,17 @@ export default function Quiz({setNewRound,  newRound}) {
           </button>
         </div>
       )}
+    
 
-      {answerMessage.length > 0 && <p>{answerMessage}</p>}
+      {answerMessage.length >  0 && <p>{answerMessage}</p>}
+
+      {gotError === true && <Redirect to="/pageNotFound" ></Redirect>}
     </section>
   );
 }
 
 Quiz.propTypes = {
     setNewRound: PropTypes.func.isRequired,
-    newRound: PropTypes.object.isRequired
+    newRound: PropTypes.object.isRequired,
+    gotError: PropTypes.bool
   };

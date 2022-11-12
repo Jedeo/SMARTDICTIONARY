@@ -1,7 +1,7 @@
 import "./App";
 import React, { useContext, useState, useEffect } from "react";
 import { getWordDefinition, getQuizWords } from "../apiCalls/getWords";
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import Home from "../HomeComponent/Home";
 import { QuizContext } from "../context/quizContext/QuizContext";
 import WordOfTheDay from "../wordOfTheDayComponent/WordOfTheDay";
@@ -15,16 +15,17 @@ function App() {
   const [words, setWords] = useState([]);
   const [quiz, setQuiz] = useContext(QuizContext);
   const [newRound, setNewRound] = useState({ newGame: false });
-
   const [errMessage, setErrMessage] = useState("");
+  const [gotError, setGotError]= useState(false)
 
   useEffect(() => {
     const getLearningWords = async () => {
       const quizWords = await getQuizWords();
-
       if (Object.keys(quizWords).length > 0) {
         setWords([...quizWords]);
+        setGotError(false)
       } else {
+        setGotError(true)
         setErrMessage(quizWords);
       }
     };
@@ -37,8 +38,8 @@ function App() {
       const allWords = [];
       words.map(async (word) => {
         const results = await getWordDefinition(word.word);
-
         if (Object.keys(results).length > 0) {
+          setGotError(false)
           results.map((result) => {
             const keys = Object.keys(allDefs);
             if (!keys.includes(result.word)) {
@@ -48,6 +49,7 @@ function App() {
             allDefs[result.word].push(result.text);
           });
         } else {
+          setGotError(true)
           setErrMessage(results);
         }
       });
@@ -88,6 +90,7 @@ function App() {
                  setNewRound={setNewRound}
                  quiz={quiz}
                  newRound={newRound}
+                 gotError={gotError}
               />
             );
           }}
@@ -113,8 +116,6 @@ function App() {
             return <PageNotFound errMessage={errMessage} />;
           }}
         />
-
-        <PageNotFound />
       </Switch>
     </div>
   );
