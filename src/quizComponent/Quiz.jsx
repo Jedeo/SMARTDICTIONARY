@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import "./Quiz.css";
 
 export default function Quiz({setNewRound,  newRound}) {
+    console.log(typeof newRound);
   const [quiz] = useContext(QuizContext);
   const { quizWords, quizDefs } = quiz;
 
