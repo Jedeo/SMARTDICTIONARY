@@ -1,10 +1,10 @@
 import React, { useContext, useState, useEffect } from "react";
-import { getWordDefinition, getExamples } from "../apiCalls/getWords";
+import { getWordDefinition, getExamples } from "../../apiCalls/getWords";
 import Word from "../wordComponent/Word";
 import { Redirect } from "react-router-dom";
 import PropTypes from 'prop-types';
 
-export default function SearchWord ({ setErrMessage,word }) {
+export default function SearchWord ({ getErrors,word }) {
   const [details, setDetails] = useState({
     _id: null,
     examples: [],
@@ -37,7 +37,7 @@ export default function SearchWord ({ setErrMessage,word }) {
         
       } else {
         setGotError(true)
-        setErrMessage(words)
+        getErrors(words)
       }
     };
     getSearched();
@@ -51,7 +51,7 @@ export default function SearchWord ({ setErrMessage,word }) {
 };
 
 SearchWord.propTypes = {
-    setErrMessage: PropTypes.func.isRequired,
+    getErrors: PropTypes.func.isRequired,
     word: PropTypes.string.isRequired
 
   };

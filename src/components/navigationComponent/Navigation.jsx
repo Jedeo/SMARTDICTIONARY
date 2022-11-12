@@ -8,7 +8,7 @@ export default function Navigation() {
       <Link className="home-button" to="/"> HOME </Link>
       <div>
       <Link className="word-of-the-day-button" to="/wordOfTheDay"> WORD OF THE DAY </Link>
-      <Link to="/learn/quiz"className="learn-button"> LEARN </Link> 
+      <Link to="/quiz"className="learn-button"> LEARN </Link> 
       </div>
     </nav>
   );

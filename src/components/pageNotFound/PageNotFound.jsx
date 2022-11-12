@@ -10,5 +10,5 @@ export default function PageNotFound ({errMessage}) {
 }
 
 PageNotFound.propTypes = {
-    errMessage: PropTypes.object
+    errMessage: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
   };
