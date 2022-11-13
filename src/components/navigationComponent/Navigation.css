@@ -5,7 +5,9 @@
     justify-content: space-around;
     height: 4rem;
 }
-
+.logo img{
+    width: 120px;
+}
 .word-of-the-day-button, .home-button, .learn-button{
     transition: 1s;
     color: aliceblue;
@@ -14,9 +16,7 @@
     border-radius: 8px;
     padding: 12px;
 }
-.learn-button{
-    margin-left: 1rem;
-}
+
 
 .word-of-the-day-button:hover, .home-button:hover, .learn-button:hover{
     transition: 2s;
@@ -24,3 +24,22 @@
     background-color:blanchedalmond;
     border-radius: 8px;
 }
+
+.active {
+    transition: 2s;
+    background-color: blanchedalmond;
+    color:cadetblue;
+  }
+
+  @media screen and (max-width: 27.5em) {
+
+    .word-of-the-day-button, .home-button, .learn-button{
+        transition: 1s;
+        color: aliceblue;
+        text-decoration: none;
+        font-size: 12px;
+        border-radius: 8px;
+        padding: 5px;
+    }
+    
+  }

@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { wordOfTheDay } from "../../apiCalls/getWords";
 import { Redirect } from "react-router-dom";
 
+import "./WordOfTheDay.css"
+
 const WordOfTheDay = (getErrors) => {
   const [todayWord, setTodayWord] = useState({
     _id: null,
@@ -44,7 +46,7 @@ const WordOfTheDay = (getErrors) => {
   return (
     <React.Fragment>
       {gotError === true && <Redirect to="/pageNotfound" />}
-      <h1>
+      <h1 className="day-title">
         {month[1]} {month[3]} Word Of The Day
       </h1>
       <Word todayWord={todayWord} />

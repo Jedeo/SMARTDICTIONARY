@@ -4,8 +4,10 @@ import PropTypes from "prop-types"
 
 export default function Word ({ todayWord }) {
   const { word, definitions, examples, note } = todayWord;
+
   const wordDefinitions = definitions.map((definition) => {
-    return <li key={definition.text}>{definition.text}</li>;
+    const {text} = definition
+    return <li key={text}>{text}</li>;
   });
 
   const wordExamples = examples.map((example) => {
@@ -19,18 +21,18 @@ export default function Word ({ todayWord }) {
   return (
     <section key={Date.now()} className="container">
       <div className="word-and-definition">
-        <h2>{word}</h2>
-        <ul>{wordDefinitions}</ul>
+        <h2 className="word-of-the-day">{word}</h2>
+        <ul className="list-of-definitions">{wordDefinitions}</ul>
 
         {note !== undefined && <div className="note">
           <h4>Note: </h4>
-          {note}
+          <p className="extra-detail">{note}</p>
         </div> }
       </div>
 
       <div className="examples">
-        <h4>{`HOW TO USE ${word.toUpperCase()} IN A SENTENCE`}</h4>
-        <ul>{wordExamples} </ul>
+        <h4 className="word-examples">{`HOW TO USE ${word.toUpperCase()} IN A SENTENCE`}</h4>
+        <ul className="list-of-examples">{wordExamples} </ul>
       </div>
     </section>
   );

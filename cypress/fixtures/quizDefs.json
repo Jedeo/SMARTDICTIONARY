@@ -1,0 +1,67 @@
+[
+    {
+        "partOfSpeech": "noun",
+        "attributionText": "from Wiktionary, Creative Commons Attribution/Share-Alike License.",
+        "sourceDictionary": "wiktionary",
+        "text": "A <xref>whirr</xref>, the sounds of a whirr.",
+        "word": "whirring",
+        "attributionUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "wordnikUrl": "https://www.wordnik.com/words/whirring",
+        "citations": [],
+        "exampleUses": [],
+        "labels": [],
+        "notes": [],
+        "relatedWords": [],
+        "textProns": []
+    },
+    {
+        "partOfSpeech": "verb",
+        "attributionText": "from Wiktionary, Creative Commons Attribution/Share-Alike License.",
+        "sourceDictionary": "wiktionary",
+        "text": "Present participle of <xref>whir</xref>.",
+        "word": "whirring",
+        "attributionUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "wordnikUrl": "https://www.wordnik.com/words/whirring",
+        "citations": [],
+        "exampleUses": [],
+        "labels": [],
+        "notes": [],
+        "relatedWords": [],
+        "textProns": []
+    },
+    {
+        "partOfSpeech": "adjective",
+        "attributionText": "from WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.",
+        "sourceDictionary": "wordnet",
+        "text": "like the sound of rapidly vibrating wings",
+        "word": "whirring",
+        "attributionUrl": "https://wordnet.princeton.edu/",
+        "wordnikUrl": "https://www.wordnik.com/words/whirring",
+        "citations": [],
+        "exampleUses": [],
+        "labels": [],
+        "notes": [],
+        "relatedWords": [],
+        "textProns": []
+    },
+    {
+        "partOfSpeech": "noun",
+        "attributionText": "from WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.",
+        "sourceDictionary": "wordnet",
+        "text": "sound of something in rapid motion",
+        "word": "whirring",
+        "exampleUses": [
+            {
+                "text": "the whir of the propellers",
+                "position": 0
+            }
+        ],
+        "attributionUrl": "https://wordnet.princeton.edu/",
+        "wordnikUrl": "https://www.wordnik.com/words/whirring",
+        "citations": [],
+        "labels": [],
+        "notes": [],
+        "relatedWords": [],
+        "textProns": []
+    }
+]

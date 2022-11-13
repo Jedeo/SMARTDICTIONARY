@@ -1,0 +1,11 @@
+@media screen and (max-width: 27.5em) {
+    .day-title{
+        transition: 1s;
+        margin-left: 12px;
+        text-decoration: none;
+        font-size: 15px;
+        color:rgb(95, 174, 148);
+        font-weight: 900;
+        border-radius: 8px;
+    }  
+}

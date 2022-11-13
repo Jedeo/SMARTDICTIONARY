@@ -1,0 +1,76 @@
+{
+    "_id": "636a87e6409c96ce0e5a2419",
+    "word": "doughty",
+    "contentProvider": {
+        "name": "wordnik",
+        "id": 711
+    },
+    "definitions": [
+        {
+            "source": "ahd-5",
+            "text": "Marked by stouthearted courage; brave.",
+            "note": null,
+            "partOfSpeech": "adjective"
+        },
+        {
+            "source": "century",
+            "text": "Strong; brave; spirited; valiant; powerful.",
+            "note": null,
+            "partOfSpeech": "adjective"
+        },
+        {
+            "source": "wiktionary",
+            "text": "Brave; bold; courageous; valiant; intrepid; stouthearted; fearless.",
+            "note": null,
+            "partOfSpeech": "adjective"
+        },
+        {
+            "source": "wiktionary",
+            "text": "Hardy; strenuous; dauntless; resolute.",
+            "note": null,
+            "partOfSpeech": "adjective"
+        }
+    ],
+    "publishDate": "2022-11-13T03:00:00.000Z",
+    "examples": [
+        {
+            "url": "http://www.guardian.co.uk/football/2011/nov/02/footballers-produce-food-and-drink",
+            "title": "Which footballers have produced their own food and drink?",
+            "text": "The record was, I think, called Peace, a heart-warming exhortation for world leaders to avoid war – although many of them, unbelievably, have completely ignored the doughty cloggers' message in the intervening years.",
+            "id": 647106747
+        },
+        {
+            "url": "http://www.jacklondons.net/writings/SouthSea/mapuhi.html",
+            "title": "THE HOUSE OF MAPUHI",
+            "text": "From his eyrie he waved his hand to Captain Lynch, and that doughty patriarch waved back.",
+            "id": 1102132791
+        },
+        {
+            "url": "http://online.wsj.com/article/SB10001424052702303657404576361331013796182.html",
+            "title": "Tracks Across America",
+            "text": "The building of the huge transcontinental railroads in the post-Civil War era, for instance, was routinely celebrated as a great triumph, achieved by doughty heroes against daunting odds.",
+            "id": 706280428
+        },
+        {
+            "url": "http://www.jacklondons.net/writings/NightBorn/worldwasyoung.html",
+            "title": "When the World Was Young",
+            "text": "Three months later the doughty cowmen confessed he was too much for them and telegraphed his father to come and take the wild man away.",
+            "id": 1099647196
+        },
+        {
+            "url": "http://www.guardian.co.uk/books/2011/apr/17/bicycle-book-bella-bathurst-review",
+            "title": "The Bicycle Book by Bella Bathurst – review",
+            "text": "In Holland, the subject of one of her most satisfying chapters, she marvels at a cycling landscape that could have been reclaimed from the sea with the bicycle in mind, and discovers that, far from taking to two wheels like ducks to water, doughty Dutch velocipedists of the mid-19th century were bombarded with stones and coal by locals who accused them of traumatising the livestock.",
+            "id": 598289757
+        },
+        {
+            "url": "http://www.huffingtonpost.com/adam-hanft/the-bronx-list-a-borough_b_236870.html",
+            "title": "Adam Hanft: Take A Bow, Bronx",
+            "text": "But the doughty, resilient Bronx has more than its share of Pulitzers, Academy Awards, and other signifiers of literary and cinematic ambition.",
+            "id": 672846714
+        }
+    ],
+    "pdd": "2022-11-13",
+    "note": "The word 'doughty' comes from a Middle English word meaning 'brave, valiant, bold'.",
+    "htmlExtra": null
+}
