@@ -29,7 +29,7 @@ const Form = () => {
           onChange={(event) => handleChange(event)}
           onKeyDown={(event)=> handleKeyDown(event)}
         />
-       <Link to={`/searchWord/${word}`}><button className="submit-button" type="button" onClick={()=>handleSubmit()}>submit</button></Link>
+     {word.length !== 0 && <Link to={`/searchWord/${word}`}><button className="submit-button" type="button" onClick={()=>handleSubmit()}>submit</button></Link>}
       </form>
     </section>
   );
