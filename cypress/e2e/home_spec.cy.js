@@ -67,4 +67,11 @@ describe("empty spec", () => {
       .visit('http://localhost:3000/wordOfTheDays')
       cy.get('.error').contains('page not found please try again later')
   })
+
+  it.only("Should an error message if link is invalid",()=>{
+    cy.intercept("GET", Cypress.env("invalidUrl"),{
+      body:{}
+    })
+   // cy.visit("http://localhost:3000")
+  })
 });

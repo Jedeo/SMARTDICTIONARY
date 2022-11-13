@@ -5,7 +5,7 @@ import { Redirect } from "react-router-dom";
 
 import "./WordOfTheDay.css"
 
-const WordOfTheDay = (getErrors) => {
+const WordOfTheDay = ({getErrors}) => {
   const [todayWord, setTodayWord] = useState({
     _id: null,
     examples: [],

@@ -9,20 +9,23 @@ export default function Quiz({ getQuiz, gotError }) {
   const { quizWords, quizDefs } = quiz;
   const [newGame, setNewGame] = useState("Next Word");
   const [count, setCount] = useState(-1);
-  const [click, setClick] = useState(false)
+  const [click, setClick] = useState(false);
   const [answers, setAnswers] = useState({});
   const [answerMessage, setAnswerMessage] = useState("");
 
   useEffect(() => {
     const values = Object.values(quizDefs);
+    const filteredData1 = values[0]?.filter((value) => value !== undefined);
+    const filteredData2 = values[1]?.filter((value) => value !== undefined);
+
     setAnswers({
-      answers1: values[0]?.[count + 1],
-      answers2: values[1]?.[count + 1],
+      answers1: filteredData1?.[count + 1],
+      answers2: filteredData2?.[count + 1],
     });
   }, [count]);
 
   const checkAnswer = (answer) => {
-    setClick(true)
+    setClick(true);
     if (quizDefs[quizWords[count]].includes(answer)) {
       setAnswerMessage("Great Job");
     } else {
@@ -43,7 +46,7 @@ export default function Quiz({ getQuiz, gotError }) {
     setCount(count + 1);
     setAnswerMessage("");
     checkEndOfGame();
-    setClick(false)
+    setClick(false);
     if (newGame === "New Quiz") {
       setCount(-1);
       setNewGame("Next Word");
@@ -96,13 +99,15 @@ export default function Quiz({ getQuiz, gotError }) {
             </li>
           </ul>
 
-          {click !== false && <button
-            className="submit-button"
-            type="button"
-            onClick={(event) => handleClick(event)}
-          >
-            {newGame}
-          </button>}
+          {click !== false && (
+            <button
+              className="submit-button"
+              type="button"
+              onClick={(event) => handleClick(event)}
+            >
+              {newGame}
+            </button>
+          )}
         </div>
       ) : (
         <div className="start-game ">

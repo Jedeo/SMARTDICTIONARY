@@ -33,14 +33,18 @@ describe("empty spec", () => {
     );
   });
 
-  it("should have a note about the word", ()=> {
-    cy.get('.note').contains("Note").should("be.visible")
-    cy.get('.extra-detail').should("be.visible").contains("The word 'doughty' comes from a Middle English word meaning 'brave, valiant, bold'.")
-  })
+  it("should have a note about the word", () => {
+    cy.get(".note").contains("Note").should("be.visible");
+    cy.get(".extra-detail")
+      .should("be.visible")
+      .contains(
+        "The word 'doughty' comes from a Middle English word meaning 'brave, valiant, bold'."
+      );
+  });
 
   it("should have examples for word of the day", () => {
     cy.get(".word-examples");
-    cy.get('.list-of-examples').should("exist")
+    cy.get(".list-of-examples").should("exist");
     cy.get(".list-of-examples > :nth-child(1)").contains(
       "The record was, I think, called Peace, a heart-warming exhortation for world leaders to avoid war – although many of them, unbelievably, have completely ignored the doughty cloggers' message in the intervening years. -Which footballers have produced their own food and drink?"
     );
@@ -49,18 +53,18 @@ describe("empty spec", () => {
     );
   });
 
-  it('should bring a user to the error page if the user types in a bad URL', () => {
-    cy
-      .visit('http://localhost:3000/wordOfTheDay/jedeo')
-      cy.get('.error').contains('page not found please try again later')
-  })
+  it("should bring a user to the error page if the user types in a bad URL", () => {
+    cy.visit("http://localhost:3000/wordOfTheDay/jedeo");
+    cy.get(".error").contains("page not found please try again later");
+  });
 
-  it('should display a message to the user if the GET request fails', () => {
-    cy.intercept('GET', Cypress.env("wordOfTheDayUrl"), {
+  it("should display a message to the user if the GET request fails", () => {
+    cy.intercept("GET", Cypress.env("wordOfTheDayUrl"), {
       statusCode: 404,
-      ok: false
+      ok: false,
     });
-    cy.visit('http://localhost:3000/wordOfTheDay');
-    //cy.get('.error').should('exist').contains(`Uh oh, that's a 404! We're sorry, we're having trouble displaying the doggos. Please refresh and try again!`);
- });
+    cy.visit("http://localhost:3000/wordOfTheDay")
+      .get(".error")
+      .contains("An error has occurred: 404");
+  });
 });
