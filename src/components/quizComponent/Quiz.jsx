@@ -2,7 +2,6 @@ import React, { useState, useContext, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import { QuizContext } from "../../context/quizContext/QuizContext";
 import PropTypes from "prop-types";
-
 import "./Quiz.css";
 
 export default function Quiz({ getQuiz, gotError }) {
@@ -10,13 +9,13 @@ export default function Quiz({ getQuiz, gotError }) {
   const { quizWords, quizDefs } = quiz;
   const [newGame, setNewGame] = useState("Next Word");
   const [count, setCount] = useState(-1);
+  const [answers, setAnswers] = useState({})
   const [answerMessage, setAnswerMessage] = useState("");
-  const keys = Object.keys(quizDefs);
   
-
-  useEffect(() => {
-    getQuiz(true)
-  }, [newGame]);
+  useEffect(()=> {
+    const values = Object.values(quizDefs)
+    setAnswers({answers1: values[0]?.[count + 1], answers2: values[1]?.[count + 1] })
+  }, [count])
 
   const checkAnswer = (answer) => {
     if (quizDefs[quizWords[count]].includes(answer)) {
@@ -42,12 +41,12 @@ export default function Quiz({ getQuiz, gotError }) {
     if (newGame === "New Quiz") {
       setCount(-1);
       setNewGame("Next Word");
-      getQuiz(false)
-      getQuiz(true)
+      getQuiz()
     }
   };
 
   const getRound = () => {
+    const keys = Object.keys(quizDefs); 
     return keys.length;
   };
 
@@ -62,11 +61,6 @@ export default function Quiz({ getQuiz, gotError }) {
     }
   };
 
-  const getRandomAnswer = (number) => {
-    const keysDef = quizDefs[keys[number]];
-    return keysDef?.[count];
-  };
-  
   return (
     <section className="quiz-container">
         { count !== -1 ? <div className="inner-quiz-container">
@@ -79,12 +73,12 @@ export default function Quiz({ getQuiz, gotError }) {
             <strong>{quizWords[count]}</strong>.
           </p>
           <ul className="quiz-list-container">
-            <li onClick={(event) => getAnswer(event)} className="quiz-answers">
-              {getRandomAnswer(0)}
+            <li key={answers?.answers1}onClick={(event) => getAnswer(event)} className="quiz-answers">
+            {answers?.answers1}
             </li>
 
-            <li onClick={(event) => getAnswer(event)} className="quiz-answers">
-              {getRandomAnswer(1)}
+            <li key={answers?.answers2}onClick={(event) => getAnswer(event)} className="quiz-answers">
+              {answers?.answers2}
             </li>
           </ul>
 
