@@ -1,7 +1,7 @@
 import "./App";
 import React, { useState} from "react";
 import { Route, Switch } from "react-router-dom";
-import Home from "../HomeComponent/Home";
+import Home from "../homeComponent/Home";
 import WordOfTheDay from "../wordOfTheDayComponent/WordOfTheDay";
 import Navigation from "../navigationComponent/Navigation";
 import SearchWord from "../searchWordComponent/SearchWord";
