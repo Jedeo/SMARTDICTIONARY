@@ -113,6 +113,6 @@ export default function Quiz({ getQuiz, gotError }) {
 }
 
 Quiz.propTypes = {
-  setNewRound: PropTypes.func.isRequired,
+  getQuiz: PropTypes.func.isRequired,
   gotError: PropTypes.bool,
 };

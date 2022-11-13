@@ -8,6 +8,7 @@ import SearchWord from "../searchWordComponent/SearchWord";
 import Form from "../formComponent/Form";
 import Learn from "../learnComponent/Learn";
 import PageNotFound from "../pageNotFound/PageNotFound";
+import { render } from '@testing-library/react';
 
 function App() {
   const [errMessage, setErrMessage] = useState("");
@@ -34,6 +35,7 @@ function App() {
         />
 
         <Route
+        exact
           path="/wordOfTheDay"
           render={() => {
             return <WordOfTheDay getErrors={getErrors}/>;
@@ -73,7 +75,7 @@ function App() {
           }}
         />
 
-        <PageNotFound errMessage={errMessage}/>
+        <Route path="*" render={() => <PageNotFound errMessage={errMessage}/>} />
       </Switch>
     </div>
   );
