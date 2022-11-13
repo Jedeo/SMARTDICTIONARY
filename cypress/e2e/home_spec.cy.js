@@ -7,27 +7,8 @@ describe("empty spec", () => {
         word: "travel",
       },
     ]);
-    cy.intercept("GET", Cypress.env("wordOfTheDayUrl"), {});
-    cy.intercept("GET", Cypress.env("examplesUrl"), {
-      examples: [
-        {
-          word: "travel",
-          text: '"To serve their senses that travel by it, or have no garden," interrupted Arthur, reading from the book, "and, oh, Mary! that reminds me -- _travel -- travellers.',
-        },
-        {
-          word: "travel",
-          text: "From white water rafting to cenote-diving, one of the hottest trends in travel is nature-based tourism, and many guidebooks respond by including extensive descriptions of flamingo tours, canyon cruises and sea-turtle habitats.",
-        },
-        {
-          word: "travel",
-          text: "From white water rafting to cenote-diving, one of the hottest trends in travel is nature-based tourism, and many guidebooks respond by including extensive descriptions of flamingo tours, canyon cruises and sea-turtle habitats.",
-        },
-        {
-          word: "travel",
-          text: "To inspect as good as exam a travel is a unequivocally critical component in following a spirit.",
-        },
-      ],
-    });
+    cy.intercept("GET", Cypress.env("wordOfTheDayUrl"), {fixture: "wordOfTheDay"});
+    cy.intercept("GET", Cypress.env("examplesUrl"), {fixture: "example"});
     cy.visit("http://localhost:3000/");
   });
   it("should display a 'Discover today's word'", () => {
@@ -53,13 +34,13 @@ describe("empty spec", () => {
     cy.get(".form-container").should("exist").should("be.visible");
     cy.get(".form-input").should("exist").should("be.visible");
     cy.get(".submit-button")
-      .should("exist")
-      .should("be.visible")
-      .contains("submit");
+      .should("not.exist")
   });
   it("should be able to type in input box", () => {
     cy.get(".form-input").type("travel");
-    cy.get(".submit-button").click();
+    cy.get(".submit-button").should("exist").contains("submit")
+    cy.get(".submit-button")
+      
   });
 
   it('should bring a user to the error page if the user types in a bad URL', () => {
@@ -68,10 +49,14 @@ describe("empty spec", () => {
       cy.get('.error').contains('page not found please try again later')
   })
 
-  it.only("Should an error message if link is invalid",()=>{
+  it("Should an error message if searched word is invalid",()=>{
     cy.intercept("GET", Cypress.env("invalidUrl"),{
       body:{}
     })
-   // cy.visit("http://localhost:3000")
+    cy.visit("http://localhost:3000")
+    cy.get('.form-input').type("asdsadsa")
+    cy.get(".submit-button").click()
+    cy.get('.error').contains("An error has occurred: 404")
   })
+ 
 });

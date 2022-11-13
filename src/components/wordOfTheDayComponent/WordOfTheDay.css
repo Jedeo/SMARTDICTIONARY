@@ -1,4 +1,10 @@
+.day-title{
+    margin-bottom: 4rem;
+}
 @media screen and (max-width: 27.5em) {
+    .day-title{
+        margin-bottom: 1rem;
+    }
     .day-title{
         transition: 1s;
         margin-left: 12px;
