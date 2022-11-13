@@ -11,18 +11,8 @@ export default function Learn ({getErrors}) {
     const [gotError, setGotError] = useState(false);
 
     useEffect(() => {
-        const getLearningWords = async () => {
-          const quizWords = await getQuizWords();
-          if (Object.keys(quizWords).length > 0) {
-            setWords([...quizWords]);
-            setGotError(false);
-          } else {
-            setGotError(true);
-            getErrors(quizWords);
-          }
-        };
-        getLearningWords();
-      }, [newRound]);
+      getLearningWords();
+      }, []);
     
       useEffect(() => {
         const getDif = async () => {
@@ -50,8 +40,19 @@ export default function Learn ({getErrors}) {
         getDif();
       }, [words]);
 
-      const getQuiz = (conformation) => {
-        setNewRound(conformation)
+      const getLearningWords = async () => {
+        const quizWords = await getQuizWords();
+        if (Object.keys(quizWords).length > 0) {
+          setWords([...quizWords]);
+          setGotError(false);
+        } else {
+          setGotError(true);
+          getErrors(quizWords);
+        }
+      };
+
+      const getQuiz = () => {
+        getLearningWords();
       }
 
   return <React.Fragment><Quiz  gotError={gotError} getQuiz={getQuiz} /></React.Fragment>;
