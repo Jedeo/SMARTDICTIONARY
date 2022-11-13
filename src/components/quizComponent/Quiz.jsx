@@ -9,15 +9,23 @@ export default function Quiz({ getQuiz, gotError }) {
   const { quizWords, quizDefs } = quiz;
   const [newGame, setNewGame] = useState("Next Word");
   const [count, setCount] = useState(-1);
-  const [answers, setAnswers] = useState({})
+  const [click, setClick] = useState(false);
+  const [answers, setAnswers] = useState({});
   const [answerMessage, setAnswerMessage] = useState("");
-  
-  useEffect(()=> {
-    const values = Object.values(quizDefs)
-    setAnswers({answers1: values[0]?.[count + 1], answers2: values[1]?.[count + 1] })
-  }, [count])
+
+  useEffect(() => {
+    const values = Object.values(quizDefs);
+    const filteredData1 = values[0]?.filter((value) => value !== undefined);
+    const filteredData2 = values[1]?.filter((value) => value !== undefined);
+
+    setAnswers({
+      answers1: filteredData1?.[count + 1],
+      answers2: filteredData2?.[count + 1],
+    });
+  }, [count]);
 
   const checkAnswer = (answer) => {
+    setClick(true);
     if (quizDefs[quizWords[count]].includes(answer)) {
       setAnswerMessage("Great Job");
     } else {
@@ -38,15 +46,16 @@ export default function Quiz({ getQuiz, gotError }) {
     setCount(count + 1);
     setAnswerMessage("");
     checkEndOfGame();
+    setClick(false);
     if (newGame === "New Quiz") {
       setCount(-1);
       setNewGame("Next Word");
-      getQuiz()
+      getQuiz();
     }
   };
 
   const getRound = () => {
-    const keys = Object.keys(quizDefs); 
+    const keys = Object.keys(quizDefs);
     return keys.length;
   };
 
@@ -55,7 +64,6 @@ export default function Quiz({ getQuiz, gotError }) {
   };
 
   const checkEndOfGame = () => {
-    
     if (count + 2 === getRound()) {
       setNewGame("New Quiz");
     }
@@ -63,7 +71,8 @@ export default function Quiz({ getQuiz, gotError }) {
 
   return (
     <section className="quiz-container">
-        { count !== -1 ? <div className="inner-quiz-container">
+      {count !== -1 ? (
+        <div className="inner-quiz-container">
           <h4>THE OBJECTIVE: TO ACE THIS DEFINITION QUIZ!</h4>
           <h5 className="num-of-questions">
             QUESTION {getCurrentRound() + 1} OF {getRound()}
@@ -73,33 +82,47 @@ export default function Quiz({ getQuiz, gotError }) {
             <strong>{quizWords[count]}</strong>.
           </p>
           <ul className="quiz-list-container">
-            <li key={answers?.answers1}onClick={(event) => getAnswer(event)} className="quiz-answers">
-            {answers?.answers1}
+            <li
+              key={answers?.answers1}
+              onClick={(event) => getAnswer(event)}
+              className="quiz-answers"
+            >
+              {answers?.answers1}
             </li>
 
-            <li key={answers?.answers2}onClick={(event) => getAnswer(event)} className="quiz-answers">
+            <li
+              key={answers?.answers2}
+              onClick={(event) => getAnswer(event)}
+              className="quiz-answers"
+            >
               {answers?.answers2}
             </li>
           </ul>
 
-          <button
-            className="submit-button"
-            type="button"
-            onClick={(event) => handleClick(event)}
-          >
-            {newGame}
-          </button>
-        </div> :  <div> 
-        <h4>Read?</h4>
+          {click !== false && (
+            <button
+              className="submit-button"
+              type="button"
+              onClick={(event) => handleClick(event)}
+            >
+              {newGame}
+            </button>
+          )}
+        </div>
+      ) : (
+        <div className="start-game ">
+          <h4>Click Start When Ready</h4>
           <button
             className="submit-button"
             type="button"
             onClick={(event) => handleClick(event)}
           >
             Start
-          </button></div>}
+          </button>
+        </div>
+      )}
 
-      {answerMessage.length > 0 && <p>{answerMessage}</p>}
+      {answerMessage.length > 0 && <p className="eval">{answerMessage}</p>}
 
       {gotError === true && <Redirect to="/pageNotFound"></Redirect>}
     </section>

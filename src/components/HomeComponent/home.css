@@ -18,3 +18,17 @@
     padding: 8px;
     border-radius: 8px;
 }
+
+@media screen and (max-width: 27.5em) {
+    .todays-word{
+        transition: 1s;
+        text-decoration: none;
+        font-size: 15px;
+        color:rgb(95, 174, 148);
+        font-weight: 900;
+        border-radius: 8px;
+    }   
+    .discover{
+        font-size: 20px;
+    }
+}

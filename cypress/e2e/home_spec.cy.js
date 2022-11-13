@@ -36,6 +36,12 @@ describe("empty spec", () => {
       .should("be.visible")
       .contains("Discover today's word");
   });
+  it("should have todays word", ()=> {
+    cy.intercept("GET", Cypress.env("wordOfTheDayUrl"), {
+      fixture: "wordOfTheDay",
+    });
+    cy.get('.todays-word').should("be.visible").contains("doughty")
+  })
   it("should have a navbar", () => {
     cy.get(".navbar").should("exist").should("be.visible");
     cy.get(".home-button").should("exist").should("be.visible");
@@ -55,4 +61,17 @@ describe("empty spec", () => {
     cy.get(".form-input").type("travel");
     cy.get(".submit-button").click();
   });
+
+  it('should bring a user to the error page if the user types in a bad URL', () => {
+    cy
+      .visit('http://localhost:3000/wordOfTheDays')
+      cy.get('.error').contains('page not found please try again later')
+  })
+
+  it.only("Should an error message if link is invalid",()=>{
+    cy.intercept("GET", Cypress.env("invalidUrl"),{
+      body:{}
+    })
+   // cy.visit("http://localhost:3000")
+  })
 });

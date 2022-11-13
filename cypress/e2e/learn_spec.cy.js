@@ -1,46 +1,31 @@
-describe('empty spec', () => {
+describe('Learn spec', () => {
   beforeEach(() => {
     
-    cy.intercept("GET", Cypress.env("wordFetchUrl"), [
-      [
-        {
-            "text": "Not packed.",
-            "word": "unpacked",
-        },
-        {
-            "text": "Not yet having had the contents removed; not yet unpacked.",
-            "word": "unpacked",
-        },
-        {
-            "text": "Past participle of <xref>unpack</xref>",
-            "word": "unpacked",
-        },
-        {
-            "text": "Having had its <xref>packing</xref> removed.",
-            "word": "unpacked",
-            
-        },
-        {
-            "text": "Not yet packed.",
-            "word": "unpacked",
-  
-        }
-    ],
-    ]);
-    cy.intercept("GET", Cypress.env("randomWords"), 
-      [
-        {
-            "id": 0,
-            "word": "unpacked"
-        },
-        {
-            "id": 0,
-            "word": "spacebar"
-        }
-    ]);
+    cy.intercept("GET", Cypress.env("wordFetchUrl"),{fixture: 'quizDefs'});
+    cy.intercept("GET", Cypress.env("randomWords"), {fixture: 'quizWords'}
+      );
    
-    cy.visit("http://localhost:3000/");
+    cy.visit("http://localhost:3000/quiz");
   });
-  it('passes', () => {
+  it("should have a navbar", () => {
+    cy.get(".navbar").should("exist").should("be.visible");
+    cy.get(".home-button").should("exist").should("be.visible");
+    cy.get(".word-of-the-day-button").should("exist").should("be.visible");
+    cy.get(".learn-button").should("exist").should("be.visible");
+  });
+  it('should be at quiz container', () => {
+    cy.get('.quiz-container').should("exist")
+  })
+
+  it("should have a start button", () => {
+    cy.get('.start-game').should("exist").should("be.visible")
+    cy.get('.submit-button').contains("Start").should("be.visible")
+  })
+  it("should be able to click on the start button and start quiz", ()=> {
+    cy.get('.submit-button').should("exist").should("be.visible").click()
+  })
+
+  it("should be able to go back and forth", () => {
+
   })
 })

@@ -10,7 +10,7 @@
   border-radius: 12px;
   justify-content: center;
   height: auto;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   padding: 2rem;
   width: 60%;
 }
@@ -18,4 +18,15 @@
 .note {
   display: flex;
   align-items: center;
+}
+
+@media screen and (max-width: 27.5em) {
+  .examples,
+  .word-and-definition {
+    width: 80vw;
+    height: auto;
+  }
+  .word-and-definition{
+    margin-top: 12px;
+  }
 }
