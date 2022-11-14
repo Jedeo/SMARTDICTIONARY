@@ -7,9 +7,8 @@ import PropTypes from "prop-types";
 export default function Learn({ getErrors }) {
   const [words, setWords] = useState([]);
   const [quiz, setQuiz] = useContext(QuizContext);
-  //const [newRound, setNewRound] = useState({ newGame: false });
   const [gotError, setGotError] = useState(false);
-
+  
   useEffect(() => {
     getLearningWords();
   }, []);
@@ -67,5 +66,5 @@ export default function Learn({ getErrors }) {
 }
 
 Learn.propTypes = {
-  gotError: PropTypes.bool,
+  getError: PropTypes.func,
 };
