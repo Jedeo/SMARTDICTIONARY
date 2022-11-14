@@ -2,7 +2,7 @@
   <img width="460" height="300" src="https://user-images.githubusercontent.com/16736352/201551615-cbbd676d-9c86-4257-96d8-1c2745bead4d.png">
 </p>
 
-### [Deployed Project](#)
+### [Deployed Project](http://smartdictionary.vercel.app/)
 
 ## Overview
 The Smart Dictionary was built with Worlink API! The goal of this project was to develop a React application with a way for users to search and interact with words of interest via the learning page! A user-friendly navigation system will guide them where they need to go at the click of a button. A server-side error handling feature was added, as well as a user error handling feature.
