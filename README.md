@@ -21,17 +21,26 @@ Learning Goals for this project included:
 ![Free Wreath Video GIF Christmas Facebook Cover](https://user-images.githubusercontent.com/16736352/201551534-72a1ad8f-26ff-4a27-9af4-f27365490de1.gif)
 
 ## Setup
+> **Note**
+> The application will not work properly on your local computer unless you request your own API Key from Wordnik`
+> Click here to learn more [Developer Wordnik]( https://developer.wordnik.com/)
+
 1. From your terminal, `cd` back to your parent directory
 2. Clone down this repository:
   ```
-  https://github.com/alyciacan/stretch-tech
+  git@github.com:Jedeo/smartdictionary.git
   ```
-3. `cd` into `art-party` directory and run:
+3. `cd` into `smartdictionary` directory and run:
   ```
   npm install
   npm start
   ```
+
 4. Enter the following url in your browser: http://localhost:3000/
+> **Note**
+> When you have your own API Key from Wordnik, you will need to add your own `dotenv` fille and add your Key learn more about dotenv
+[here](https://www.npmjs.com/package/dotenv )
+ > Watch this video to learn how to work with `dotenv` in React [Using env file](https://www.youtube.com/watch?v=KJE4LtAxLEw) 
 
 ## Technologies Used
 ![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E) 
@@ -46,10 +55,6 @@ Learning Goals for this project included:
 
 ## Future Features
 - [x] add a way for user to create their own cards to study
-
-
-## Dev Notes
-### Wins
 
 ### Opportunities for growth
 - [x] Learning how to stub and intercept with Cypress testing
