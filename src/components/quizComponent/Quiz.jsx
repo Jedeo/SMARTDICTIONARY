@@ -17,7 +17,7 @@ export default function Quiz({ getQuiz, gotError }) {
     const values = Object.values(quizDefs);
     const filteredData1 = values[0]?.filter((value) => value !== undefined);
     const filteredData2 = values[1]?.filter((value) => value !== undefined);
-
+  
     setAnswers({
       answers1: filteredData1?.[count + 1],
       answers2: filteredData2?.[count + 1],
@@ -47,6 +47,7 @@ export default function Quiz({ getQuiz, gotError }) {
     setAnswerMessage("");
     checkEndOfGame();
     setClick(false);
+
     if (newGame === "New Quiz") {
       setCount(-1);
       setNewGame("Next Word");

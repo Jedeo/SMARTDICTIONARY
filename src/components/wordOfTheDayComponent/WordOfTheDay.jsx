@@ -2,10 +2,10 @@ import Word from "../wordComponent/Word";
 import React, { useState, useEffect } from "react";
 import { wordOfTheDay } from "../../apiCalls/getWords";
 import { Redirect } from "react-router-dom";
-
+import PropTypes from "prop-types";
 import "./WordOfTheDay.css"
 
-const WordOfTheDay = ({getErrors}) => {
+export default function WordOfTheDay({getErrors}) {
   const [todayWord, setTodayWord] = useState({
     _id: null,
     examples: [],
@@ -54,4 +54,7 @@ const WordOfTheDay = ({getErrors}) => {
   );
 };
 
-export default WordOfTheDay;
+
+WordOfTheDay.propTypes = {
+    getErrors: PropTypes.func
+}
