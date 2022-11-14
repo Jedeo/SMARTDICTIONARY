@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+<p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/16736352/201551615-cbbd676d-9c86-4257-96d8-1c2745bead4d.png">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### [Deployed Project](#)
 
-## Available Scripts
+## Overview
+The Smart Dictionary was built with Worlink API! The goal of this project was to develop a React application with a way for users to search and interact with words of interest via the learning page! A user-friendly navigation system will guide them where they need to go at the click of a button. A server-side error handling feature was added, as well as a user error handling feature.
 
-In the project directory, you can run:
+## Project Context
+I am a deloper in the Front-End Program at [Turing School of Software and Design](https://frontend.turing.edu/), which means we have been devs for 5 months! Smart Dictionart one of many prjects I have worked on.
 
-### `npm start`
+Learning Goals for this project included:      
+✔️ Use at least one external API      
+✔️ extend my knodge on React Context             
+✔️ Create a multi-page engaging UX using React Router 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[Link to Project Description](https://frontend.turing.edu/projects/module-3/showcase.html)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Demo
+![Free Wreath Video GIF Christmas Facebook Cover](https://user-images.githubusercontent.com/16736352/201551534-72a1ad8f-26ff-4a27-9af4-f27365490de1.gif)
 
-### `npm test`
+## Setup
+1. From your terminal, `cd` back to your parent directory
+2. Clone down this repository:
+  ```
+  https://github.com/alyciacan/stretch-tech
+  ```
+3. `cd` into `art-party` directory and run:
+  ```
+  npm install
+  npm start
+  ```
+4. Enter the following url in your browser: http://localhost:3000/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
+![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E) 
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) 
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) 
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) 
+![cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e) 
+![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black) 
+![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white) 
+![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
-### `npm run build`
+## Future Features
+- [x] add a way for user to create their own cards to study
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Dev Notes
+### Wins
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Opportunities for growth
+- [x] Learning how to stub and intercept with Cypress testing
+- [x] Expanding our knowledge of Cypress syntax
+- [x] Practice using React hooks: useState & useEffect
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Developed by:
+Jedeo Manirikumwenatwe |
+jedeopastor@gmail.com |
+[Github](https://github.com/Jedeo) |
+[LinkedIn](linkedin.com/in/jedeo) |
