@@ -1,5 +1,6 @@
 .day-title{
     margin-bottom: 4rem;
+    margin-left: 2vw;
 }
 @media screen and (max-width: 27.5em) {
     .day-title{
