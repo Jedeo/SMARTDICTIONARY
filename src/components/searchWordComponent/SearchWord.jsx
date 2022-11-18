@@ -8,7 +8,7 @@ export default function SearchWord ({ getErrors,word }) {
   const [details, setDetails] = useState({
     _id: null,
     examples: [],
-    word: [],
+    word: "",
     definitions: [],
     gotInfo: false,
   });
@@ -17,18 +17,19 @@ export default function SearchWord ({ getErrors,word }) {
 
   useEffect(() => {
     const getSearched = async () => {
-      const words = await getWordDefinition(word.toLowerCase());
+      const defs = await getWordDefinition(word.toLowerCase());
+      console.log(defs);
       const examples = await getExamples(word.toLowerCase());
 
-      const wordKeys = Object.keys(words);
+      const wordKeys = Object.keys(defs);
       const examplesKeys = Object.keys(examples);
       if (wordKeys.length > 0 && examplesKeys.length > 0) {
-        return words.map((word) => {
+        return defs.map((word) => {
           setDetails({
             _id: word.id,
             examples: examples.examples,
             word: word.word,
-            definitions: [{ id: Date.now(), text: word.text }],
+            definitions: [{ id: Date.now(), text: defs[0].text }],
             gotInfo: true,
           });
 
@@ -37,7 +38,7 @@ export default function SearchWord ({ getErrors,word }) {
         
       } else {
         setGotError(true)
-        getErrors(words)
+        getErrors(defs)
       }
     };
     getSearched();

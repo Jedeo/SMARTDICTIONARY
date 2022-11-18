@@ -7,7 +7,7 @@ export default function Navigation() {
     <nav className="navbar">
       <Link className="logo" to="/"> <img src={dictionary} alt="" /> </Link>
       <div>
-      <NavLink exact to='/' className="home-button">HOME</NavLink> <NavLink exact to="/wordOfTheDay" className="word-of-the-day-button"> WORD OF THE DAY</NavLink> <NavLink to="/quiz" className="learn-button">LEARN</NavLink>
+      <NavLink exact to='/' className="home-button">HOME</NavLink> <NavLink exact to="/wordOfTheDay" className="word-of-the-day-button"> WORD OF THE DAY</NavLink>
       </div>
     </nav>
   );
