@@ -5,7 +5,7 @@
 ### [Deployed Project](http://smartdictionary.vercel.app/)
 
 ## Overview
-The Smart Dictionary was built with Worlink API! The goal of this project was to develop a React application with a way for users to search and interact with words of interest via the learning page! A user-friendly navigation system will guide them where they need to go at the click of a button. A server-side error handling feature was added, as well as a user error handling feature.
+The Smart Dictionary was built with Worlink API! The goal of this project was to develop a React application with a way for users to search words of interest via the searchbar! A user-friendly navigation system will guide them where they need to go at the click of a button. A server-side error handling feature was added, as well as a user error handling feature.
 
 ## Project Context
 I am a deloper in the Front-End Program at [Turing School of Software and Design](https://frontend.turing.edu/), which means we have been devs for 5 months! Smart Dictionart one of many prjects I have worked on.
